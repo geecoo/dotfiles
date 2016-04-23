@@ -38,4 +38,12 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
     --disturl=https://npm.taobao.org/dist \
     --userconfig=$HOME/.cnpmrc"
 
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+
+# Copy my public key to the pasteboard
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf '=> Public key copied to pasteboard.\n'"
+
+# Flush DNS cache
+alias flushdns="dscacheutil -flushcache"
 

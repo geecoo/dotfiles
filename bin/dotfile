@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-cd "$(dirname "$0")/.."
+cd "$(dirname "${BASH_SOURCE}")/..";
 DOT_DIR=$(pwd -P)
 #BASE_DIR=$(cd `dirname $0`; pwd)
 #DOT_DIR=$(dirname $BASE_DIR)
@@ -23,7 +23,7 @@ case $1 in
     sync)
         sync
     ;;
-    init)
+    init|install)
         sync
     ;;
     *)

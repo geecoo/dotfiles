@@ -12,12 +12,14 @@ PATH=$HOME/bin:$PATH
 export PATH
 
 # Load profile config
-if [ -d /data/dotfiles/etc/profile.d ]; then
-    for i in /data/dotfiles/etc/profile.d/*.sh; do
+if [ -d ~/dotfiles/etc/profile.d ]; then
+    for i in ~/dotfiles/etc/profile.d/*.sh; do
         if [ -r "$i" ]; then
             if [ "$PS1" ]; then
+		echo $i
                 source "$i"
             else
+		echo $i
                 source "$i" >/dev/null
             fi
         fi

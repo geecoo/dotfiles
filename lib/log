@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+
+COLOR_WHITE="\033[0;7m"
+COLOR_RED="\033[0;37;41m"
+COLOR_BLUE="\033[0;37;44m"
+COLOR_GREEN="\033[0;37;42m"
+COLOR_RESET="\033[0;37m"
+COLOR_PURPLE="\033[0;37;35m"
+
+
+function watchdog() {
+    local color=$COLOR_WHITE
+    local default_msg="No message passed."
+    local message=${1:-$default_msg}
+    
+    local level=${2:-INFO}
+    
+    case $level in
+    INFO)
+         echo -en "";;
+    WARN|WARNING)
+         echo -en "$COLOR_PURPLE" ;;
+    ERROR|ERR)
+         echo -en "$COLOR_RED" ;;
+    SUCCESS|SUCC|SUC)
+        echo -en "$COLOR_GREEN" ;;
+    NOTICE)
+         echo -en "$COLOR_WHITE" ;;
+    *)
+         echo -en "" ;;
+    esac
+
+    echo -en "$message$COLOR_RESET \n" 
+    #tput sgr0         # Reset to normal
+
+    echo $(date)': '$1 >> /tmp/install_log
+}
+
+e_success() {
+        printf "$(tput setaf 64)✓ %s$(tput sgr0)\n" "$@"
+}
+
+e_header() {
+        printf "\n$(tput setaf 7)%s$(tput sgr0)\n" "$@"
+}
+
+e_error() {
+        printf "$(tput setaf 1)x %s$(tput sgr0)\n" "$@"
+}
+
+e_warning() {
+        printf "$(tput setaf 136)! %s$(tput sgr0)\n" "$@"
+}
+
+info () {
+    printf "\r  [ \033[00;34m..\033[0m ] $1\n"
+}
+
+user () {
+    printf "\r  [ \033[0;33m??\033[0m ] $1\n"
+}
+
+success () {
+    printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
+}
+
+fail () {
+    printf "\r\033[2K  [ \033[0;31mFAIL\033[0m ] $1\n"
+    echo ''
+    exit
+}

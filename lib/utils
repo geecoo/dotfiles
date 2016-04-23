@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+require() {
+    . "${ROOT_DIR}${1}"
+}
+
+loadfile() {
+    watchdog "start load  $1"
+    source "$1"
+    if [[ "$?" -ne 0 ]];then
+        watchdog "load script $1 failure" ERROR
+        exit 1
+    fi
+}

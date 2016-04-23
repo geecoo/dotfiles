@@ -1,0 +1,32 @@
+#!/bin/bash
+
+cd "$(dirname "$0")/.."
+DOT_DIR=$(pwd -P)
+#BASE_DIR=$(cd `dirname $0`; pwd)
+#DOT_DIR=$(dirname $BASE_DIR)
+cd $DOT_DIR
+
+echo "";
+echo "script direcotry ${DOT_DIR} "
+
+# load lib directory
+source ./script/boot.sh
+
+
+# sync your config file
+sync() {
+    loadfile script/dotfile_sync.sh
+}
+
+
+case $1 in
+    sync)
+        sync
+    ;;
+    init)
+        sync
+    ;;
+    *)
+        usage
+    ;;
+esac

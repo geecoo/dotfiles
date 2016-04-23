@@ -1,0 +1,31 @@
+# Always ignore extensions
+*.diff
+*.err
+*.log
+*.orig
+*~
+
+# Compiled Python files
+*.pyc
+
+# OS or Folder view configuration files
+.cache
+.DS_Store
+Desktop.ini
+
+# Folders to ignore
+.svn
+.hg
+
+# Node.js package manager
+bower_components
+node_modules
+npm-debug.log
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes

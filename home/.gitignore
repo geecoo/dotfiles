@@ -4,8 +4,6 @@
 *.log
 *.orig
 *~
-
-# Compiled Python files
 *.pyc
 
 # OS or Folder view configuration files

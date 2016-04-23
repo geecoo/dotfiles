@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-
-################################
-# Load Require File 
-################################
 load_require_file() 
 {
     for i in lib/*; do

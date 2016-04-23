@@ -5,10 +5,10 @@ if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
 
-# User specific environment and startup programs
-
 PATH=$HOME/bin:$PATH
-
+if [ -d ~/dotfiles/bin ];then
+    PATH=~/dotfiles/bin:$PATH
+fi
 export PATH
 
 # Load profile config

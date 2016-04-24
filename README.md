@@ -24,4 +24,13 @@
 * [mattn/emmet-vim](https://github.com/mattn/emmet-vim)
 * [Valloric/YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
 
+# VIM (Another one https://github.com/geecoo/vim)
 
+> PlugInstall [name ...] [#threads]
+> PlugStatus
+> Trinity/plugin/NERD_tree.vim with scrooloose/nerdtree conflict
+> cd ~/.vim/bundle/Trinity/plugin && rm -f NERD_tree.vim
+
+# secureCRT
+Options -> Global Options -> General -> Configuration Path
+Configuration data is stored in the location below.
